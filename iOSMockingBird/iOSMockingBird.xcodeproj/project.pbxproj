@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0482FB30FBF84F970CCE7874 /* iOSMockingBirdMocks.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C332386800E0836AD452E2 /* iOSMockingBirdMocks.generated.swift */; };
 		D3A31033244371A10062DC4F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A31032244371A10062DC4F /* AppDelegate.swift */; };
 		D3A31035244371A10062DC4F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A31034244371A10062DC4F /* SceneDelegate.swift */; };
 		D3A31037244371A10062DC4F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A31036244371A10062DC4F /* ContentView.swift */; };
@@ -15,6 +16,7 @@
 		D3A3103F244371A30062DC4F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3A3103D244371A30062DC4F /* LaunchScreen.storyboard */; };
 		D3A3104A244371A30062DC4F /* iOSMockingBirdTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A31049244371A30062DC4F /* iOSMockingBirdTests.swift */; };
 		D3A31055244371CC0062DC4F /* RestAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A31054244371CC0062DC4F /* RestAPI.swift */; };
+		D3A3105C2443B80D0062DC4F /* Mockingbird.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3A310572443897E0062DC4F /* Mockingbird.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,6 +30,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		01C332386800E0836AD452E2 /* iOSMockingBirdMocks.generated.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = iOSMockingBirdMocks.generated.swift; path = MockingbirdMocks/iOSMockingBirdMocks.generated.swift; sourceTree = "<group>"; };
 		D3A3102F244371A10062DC4F /* iOSMockingBird.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSMockingBird.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3A31032244371A10062DC4F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D3A31034244371A10062DC4F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -40,6 +43,7 @@
 		D3A31049244371A30062DC4F /* iOSMockingBirdTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSMockingBirdTests.swift; sourceTree = "<group>"; };
 		D3A3104B244371A30062DC4F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D3A31054244371CC0062DC4F /* RestAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestAPI.swift; sourceTree = "<group>"; };
+		D3A310572443897E0062DC4F /* Mockingbird.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Mockingbird.framework; path = Carthage/Build/iOS/Mockingbird.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,18 +58,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3A3105C2443B80D0062DC4F /* Mockingbird.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4002178A20532836B072BCFB /* Generated Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				01C332386800E0836AD452E2 /* iOSMockingBirdMocks.generated.swift */,
+			);
+			name = "Generated Mocks";
+			sourceTree = "<group>";
+		};
 		D3A31026244371A10062DC4F = {
 			isa = PBXGroup;
 			children = (
 				D3A31031244371A10062DC4F /* iOSMockingBird */,
 				D3A31048244371A30062DC4F /* iOSMockingBirdTests */,
 				D3A31030244371A10062DC4F /* Products */,
+				D3A310562443897E0062DC4F /* Frameworks */,
+				4002178A20532836B072BCFB /* Generated Mocks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -110,6 +125,14 @@
 			path = iOSMockingBirdTests;
 			sourceTree = "<group>";
 		};
+		D3A310562443897E0062DC4F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D3A310572443897E0062DC4F /* Mockingbird.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -134,9 +157,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D3A31051244371A30062DC4F /* Build configuration list for PBXNativeTarget "iOSMockingBirdTests" */;
 			buildPhases = (
+				45ABD22232DAF4E2E2D56790 /* Clean Mockingbird Mocks */,
+				A037DA4CBC621FCBB90893CA /* Generate Mockingbird Mocks */,
 				D3A31041244371A30062DC4F /* Sources */,
 				D3A31042244371A30062DC4F /* Frameworks */,
 				D3A31043244371A30062DC4F /* Resources */,
+				D3A3105B2443B7BD0062DC4F /* Carthage */,
 			);
 			buildRules = (
 			);
@@ -206,6 +232,60 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		45ABD22232DAF4E2E2D56790 /* Clean Mockingbird Mocks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Clean Mockingbird Mocks";
+			outputPaths = (
+				"/tmp/Mockingbird-B55A51B5-4285-42A0-9666-C8F131E40038",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "echo $RANDOM > '/tmp/Mockingbird-B55A51B5-4285-42A0-9666-C8F131E40038'\n";
+		};
+		A037DA4CBC621FCBB90893CA /* Generate Mockingbird Mocks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"/tmp/Mockingbird-B55A51B5-4285-42A0-9666-C8F131E40038",
+			);
+			name = "Generate Mockingbird Mocks";
+			outputPaths = (
+				"$(SRCROOT)/MockingbirdMocks/iOSMockingBirdMocks.generated.swift",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "mockingbird generate \\\n  --targets 'iOSMockingBird' \\\n  --outputs \"${SRCROOT}/MockingbirdMocks/iOSMockingBirdMocks.generated.swift\" \\\n  --verbose\n\n# Ensure mocks are generated prior to running Compile Sources\nrm -f '/tmp/Mockingbird-B55A51B5-4285-42A0-9666-C8F131E40038'\n";
+		};
+		D3A3105B2443B7BD0062DC4F /* Carthage */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Mockingbird.framework",
+			);
+			name = Carthage;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Mockingbird.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		D3A3102B244371A10062DC4F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -223,6 +303,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D3A3104A244371A30062DC4F /* iOSMockingBirdTests.swift in Sources */,
+				0482FB30FBF84F970CCE7874 /* iOSMockingBirdMocks.generated.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -370,6 +451,10 @@
 				DEVELOPMENT_ASSET_PATHS = "\"iOSMockingBird/Preview Content\"";
 				DEVELOPMENT_TEAM = U36872D6G6;
 				ENABLE_PREVIEWS = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = iOSMockingBird/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -390,6 +475,10 @@
 				DEVELOPMENT_ASSET_PATHS = "\"iOSMockingBird/Preview Content\"";
 				DEVELOPMENT_TEAM = U36872D6G6;
 				ENABLE_PREVIEWS = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = iOSMockingBird/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -409,6 +498,10 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = U36872D6G6;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = iOSMockingBirdTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -431,6 +524,10 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = U36872D6G6;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = iOSMockingBirdTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
