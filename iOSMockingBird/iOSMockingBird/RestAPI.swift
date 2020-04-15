@@ -10,7 +10,7 @@ import Foundation
 import Combine
 
 class RestAPI {
-    func index() -> AnyPublisher<[String], URLError> {
+    func index(ascOrder: Bool) -> AnyPublisher<[String], URLError> {
         return Future { (promise) in
             promise(.success(["Matrix", "Brian's life", "Inception"]))
         }.eraseToAnyPublisher()

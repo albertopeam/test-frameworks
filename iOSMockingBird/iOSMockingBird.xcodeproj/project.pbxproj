@@ -14,9 +14,10 @@
 		D3A31039244371A30062DC4F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3A31038244371A30062DC4F /* Assets.xcassets */; };
 		D3A3103C244371A30062DC4F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3A3103B244371A30062DC4F /* Preview Assets.xcassets */; };
 		D3A3103F244371A30062DC4F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3A3103D244371A30062DC4F /* LaunchScreen.storyboard */; };
-		D3A3104A244371A30062DC4F /* iOSMockingBirdTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A31049244371A30062DC4F /* iOSMockingBirdTests.swift */; };
+		D3A3104A244371A30062DC4F /* UseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A31049244371A30062DC4F /* UseCaseTests.swift */; };
 		D3A31055244371CC0062DC4F /* RestAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A31054244371CC0062DC4F /* RestAPI.swift */; };
 		D3A3105C2443B80D0062DC4F /* Mockingbird.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3A310572443897E0062DC4F /* Mockingbird.framework */; };
+		D3A3105E2443B9640062DC4F /* UseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A3105D2443B9640062DC4F /* UseCase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,10 +41,11 @@
 		D3A3103E244371A30062DC4F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D3A31040244371A30062DC4F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D3A31045244371A30062DC4F /* iOSMockingBirdTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOSMockingBirdTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		D3A31049244371A30062DC4F /* iOSMockingBirdTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSMockingBirdTests.swift; sourceTree = "<group>"; };
+		D3A31049244371A30062DC4F /* UseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCaseTests.swift; sourceTree = "<group>"; };
 		D3A3104B244371A30062DC4F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D3A31054244371CC0062DC4F /* RestAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestAPI.swift; sourceTree = "<group>"; };
 		D3A310572443897E0062DC4F /* Mockingbird.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Mockingbird.framework; path = Carthage/Build/iOS/Mockingbird.framework; sourceTree = "<group>"; };
+		D3A3105D2443B9640062DC4F /* UseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 			isa = PBXGroup;
 			children = (
 				D3A31054244371CC0062DC4F /* RestAPI.swift */,
+				D3A3105D2443B9640062DC4F /* UseCase.swift */,
 				D3A31032244371A10062DC4F /* AppDelegate.swift */,
 				D3A31034244371A10062DC4F /* SceneDelegate.swift */,
 				D3A31036244371A10062DC4F /* ContentView.swift */,
@@ -119,7 +122,7 @@
 		D3A31048244371A30062DC4F /* iOSMockingBirdTests */ = {
 			isa = PBXGroup;
 			children = (
-				D3A31049244371A30062DC4F /* iOSMockingBirdTests.swift */,
+				D3A31049244371A30062DC4F /* UseCaseTests.swift */,
 				D3A3104B244371A30062DC4F /* Info.plist */,
 			);
 			path = iOSMockingBirdTests;
@@ -291,6 +294,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3A3105E2443B9640062DC4F /* UseCase.swift in Sources */,
 				D3A31055244371CC0062DC4F /* RestAPI.swift in Sources */,
 				D3A31033244371A10062DC4F /* AppDelegate.swift in Sources */,
 				D3A31035244371A10062DC4F /* SceneDelegate.swift in Sources */,
@@ -302,7 +306,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D3A3104A244371A30062DC4F /* iOSMockingBirdTests.swift in Sources */,
+				D3A3104A244371A30062DC4F /* UseCaseTests.swift in Sources */,
 				0482FB30FBF84F970CCE7874 /* iOSMockingBirdMocks.generated.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

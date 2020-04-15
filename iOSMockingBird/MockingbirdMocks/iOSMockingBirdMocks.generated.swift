@@ -117,22 +117,23 @@ public final class RestAPIMock: iOSMockingBird.RestAPI, Mockingbird.Mock {
     self.sourceLocation = sourceLocation
   }
 
-  // MARK: Mocked `index`()
+  // MARK: Mocked `index`(`ascOrder`: Bool)
 
-  public override func `index`() -> AnyPublisher<[String], URLError> {
-    let invocation: Mockingbird.Invocation = Mockingbird.Invocation(selectorName: "`index`() -> AnyPublisher<[String], URLError>", arguments: [])
+  public override func `index`(`ascOrder`: Bool) -> AnyPublisher<[String], URLError> {
+    let invocation: Mockingbird.Invocation = Mockingbird.Invocation(selectorName: "`index`(`ascOrder`: Bool) -> AnyPublisher<[String], URLError>", arguments: [Mockingbird.ArgumentMatcher(`ascOrder`)])
     mockingContext.didInvoke(invocation)
     let implementation = stubbingContext.implementation(for: invocation, optional: false)
-    if let concreteImplementation = implementation as? () -> AnyPublisher<[String], URLError> {
-      return concreteImplementation()
+    if let concreteImplementation = implementation as? (Bool) -> AnyPublisher<[String], URLError> {
+      return concreteImplementation(`ascOrder`)
     } else {
       return (implementation as! () -> AnyPublisher<[String], URLError>)()
     }
   }
 
-  public func `index`() -> Mockingbird.Mockable<Mockingbird.MethodDeclaration, () -> AnyPublisher<[String], URLError>, AnyPublisher<[String], URLError>> {
-    let invocation: Mockingbird.Invocation = Mockingbird.Invocation(selectorName: "`index`() -> AnyPublisher<[String], URLError>", arguments: [])
-    return Mockingbird.Mockable<Mockingbird.MethodDeclaration, () -> AnyPublisher<[String], URLError>, AnyPublisher<[String], URLError>>(mock: self, invocation: invocation)
+  public func `index`(`ascOrder`: @escaping @autoclosure () -> Bool) -> Mockingbird.Mockable<Mockingbird.MethodDeclaration, (Bool) -> AnyPublisher<[String], URLError>, AnyPublisher<[String], URLError>> {
+    let arguments: [Mockingbird.ArgumentMatcher] = [Mockingbird.resolve(`ascOrder`)]
+    let invocation: Mockingbird.Invocation = Mockingbird.Invocation(selectorName: "`index`(`ascOrder`: Bool) -> AnyPublisher<[String], URLError>", arguments: arguments)
+    return Mockingbird.Mockable<Mockingbird.MethodDeclaration, (Bool) -> AnyPublisher<[String], URLError>, AnyPublisher<[String], URLError>>(mock: self, invocation: invocation)
   }
 }
 
@@ -307,4 +308,60 @@ public final class SceneDelegateMock: iOSMockingBird.SceneDelegate, Mockingbird.
 /// Initialize an initializable class mock of `iOSMockingBird.SceneDelegate`.
 public func mock(_ type: iOSMockingBird.SceneDelegate.Type, file: StaticString = #file, line: UInt = #line) -> SceneDelegateMock.InitializerProxy.Type {
   return SceneDelegateMock.InitializerProxy.self
+}
+
+// MARK: - Mocked UseCase
+
+public final class UseCaseMock: iOSMockingBird.UseCase, Mockingbird.Mock {
+  static let staticMock = Mockingbird.StaticMock()
+  public let mockingContext = Mockingbird.MockingContext()
+  public let stubbingContext = Mockingbird.StubbingContext()
+  public let mockMetadata = Mockingbird.MockMetadata(["generator_version": "0.11.1", "module_name": "iOSMockingBird"])
+  public var sourceLocation: Mockingbird.SourceLocation? {
+    get { return stubbingContext.sourceLocation }
+    set {
+      stubbingContext.sourceLocation = newValue
+      UseCaseMock.staticMock.stubbingContext.sourceLocation = newValue
+    }
+  }
+
+  public enum InitializerProxy {
+    public static func initialize(`restApi`: iOSMockingBird.RestAPI, __file: StaticString = #file, __line: UInt = #line) -> UseCaseMock {
+      let mock: UseCaseMock = UseCaseMock(restApi: `restApi`)
+      mock.sourceLocation = SourceLocation(__file, __line)
+      return mock
+    }
+  }
+
+  // MARK: Mocked `get`()
+
+  public override func `get`() -> AnyPublisher<[String], URLError> {
+    let invocation: Mockingbird.Invocation = Mockingbird.Invocation(selectorName: "`get`() -> AnyPublisher<[String], URLError>", arguments: [])
+    mockingContext.didInvoke(invocation)
+    let implementation = stubbingContext.implementation(for: invocation, optional: false)
+    if let concreteImplementation = implementation as? () -> AnyPublisher<[String], URLError> {
+      return concreteImplementation()
+    } else {
+      return (implementation as! () -> AnyPublisher<[String], URLError>)()
+    }
+  }
+
+  public func `get`() -> Mockingbird.Mockable<Mockingbird.MethodDeclaration, () -> AnyPublisher<[String], URLError>, AnyPublisher<[String], URLError>> {
+    let invocation: Mockingbird.Invocation = Mockingbird.Invocation(selectorName: "`get`() -> AnyPublisher<[String], URLError>", arguments: [])
+    return Mockingbird.Mockable<Mockingbird.MethodDeclaration, () -> AnyPublisher<[String], URLError>, AnyPublisher<[String], URLError>>(mock: self, invocation: invocation)
+  }
+
+  // MARK: Mocked init(`restApi`: iOSMockingBird.RestAPI)
+
+  public required override init(`restApi`: iOSMockingBird.RestAPI) {
+    super.init(restApi: `restApi`)
+    Mockingbird.checkVersion(for: self)
+    let invocation: Mockingbird.Invocation = Mockingbird.Invocation(selectorName: "init(`restApi`: iOSMockingBird.RestAPI) ", arguments: [Mockingbird.ArgumentMatcher(`restApi`)])
+    mockingContext.didInvoke(invocation)
+  }
+}
+
+/// Initialize an initializable class mock of `iOSMockingBird.UseCase`.
+public func mock(_ type: iOSMockingBird.UseCase.Type, file: StaticString = #file, line: UInt = #line) -> UseCaseMock.InitializerProxy.Type {
+  return UseCaseMock.InitializerProxy.self
 }
