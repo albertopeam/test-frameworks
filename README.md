@@ -11,5 +11,5 @@
 
 |   | Installation  | Usage | Syntax | Github Stars | GitHub contributors | Issues
 |---|---|---|---|---|---|---|
-| Mockingbird  |  Mid | Easy  | Easy | 154 |  5 | 1
+| Mockingbird  |  Mid | Easy  | Readable | 154 |  5 | 1
 | Cuckoo  |   |   |   |  1.2k | 29 | 33
